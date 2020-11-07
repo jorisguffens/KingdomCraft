@@ -62,6 +62,9 @@ public class BKingdom extends Model implements Kingdom {
     @OneToMany(mappedBy = "kingdom", fetch = FetchType.EAGER)
     public List<BKingdomAttribute> attributes;
 
+    @OneToMany(mappedBy = "kingdom", fetch = FetchType.EAGER)
+    public List<BMail> mails;
+
     @Formula(select = "(select count(id) from users where kingdom_id = t0.id)")
     public int memberCount;
 
