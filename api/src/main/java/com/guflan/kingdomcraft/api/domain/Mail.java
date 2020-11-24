@@ -1,20 +1,24 @@
 package com.guflan.kingdomcraft.api.domain;
 
+import java.util.Date;
+
 public interface Mail extends Model {
 
-    int getMailId();
+    int getMailID();
 
-    void setMailId(int mailId);
+    void setMailID(int mailID);
 
     String getSubject();
 
     void setSubject(String subject);
 
-    void setSender(Kingdom sender);
+    String getSender();
 
-    Kingdom getReceiver();
+    void setSender(String sender);
 
-    void setReceiver(Kingdom receiver);
+    String getReceiver();
+
+    void setReceiver(String receiver);
 
     int getPriority();
 
@@ -27,4 +31,6 @@ public interface Mail extends Model {
     String getContext();
 
     void setContext(String context);
+
+    void getCreatedAt(Date createdAt);
 }

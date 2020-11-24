@@ -17,10 +17,7 @@
 
 package com.guflan.kingdomcraft.common.ebean.beans;
 
-import com.guflan.kingdomcraft.api.domain.Kingdom;
-import com.guflan.kingdomcraft.api.domain.KingdomAttribute;
-import com.guflan.kingdomcraft.api.domain.Rank;
-import com.guflan.kingdomcraft.api.domain.RankAttribute;
+import com.guflan.kingdomcraft.api.domain.*;
 import com.guflan.kingdomcraft.api.entity.PlatformLocation;
 import com.guflan.kingdomcraft.common.ebean.StorageContext;
 import com.guflan.kingdomcraft.common.ebean.beans.query.QBUser;
@@ -203,6 +200,24 @@ public class BKingdom extends Model implements Kingdom {
             attributes.add(attribute);
             return attribute;
         });
+    }
+
+
+    @Override
+    public Mail getMail(int mailId){
+        return mails.get(mailId);
+    }
+
+    @Override
+    public List<Mail> getMails(){
+        return new ArrayList<>(mails);
+    }
+
+    @Override
+    public void createMail(Mail mail) {
+        mails.add((BMail) mail);
+        //Not sure if this cast works with ebeans.
+
     }
 
     @Override

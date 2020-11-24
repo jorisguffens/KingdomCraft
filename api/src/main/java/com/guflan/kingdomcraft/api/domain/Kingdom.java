@@ -62,6 +62,12 @@ public interface Kingdom extends Model {
 
     KingdomAttribute createAttribute(String name);
 
+    Mail getMail(int mailId);
+
+    List<Mail> getMails();
+
+    void createMail(Mail mail);
+
     PlatformLocation getSpawn();
 
     void setSpawn(PlatformLocation location);

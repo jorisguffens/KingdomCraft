@@ -20,10 +20,10 @@ package com.guflan.kingdomcraft.bukkit.command;
 import com.guflan.kingdomcraft.api.entity.PlatformSender;
 import com.guflan.kingdomcraft.bukkit.KingdomCraftBukkitPlugin;
 import com.guflan.kingdomcraft.bukkit.commands.InfoCommand;
+import com.guflan.kingdomcraft.bukkit.commands.mail.MailCreateCommand;
 import com.guflan.kingdomcraft.bukkit.entity.BukkitSender;
 import com.guflan.kingdomcraft.common.KingdomCraftImpl;
 import com.guflan.kingdomcraft.common.command.CommandManager;
-import org.bukkit.ChatColor;
 import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -44,6 +44,7 @@ public class CommandHandler implements CommandExecutor, TabCompleter {
 
         CommandManager cm = plugin.getKdc().getCommandManager();
         cm.addCommand(new InfoCommand(kdc));
+        cm.addCommand(new MailCreateCommand(kdc));
     }
 
     @Override
